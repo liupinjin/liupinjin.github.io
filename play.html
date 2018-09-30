@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content=".videoimg{         width: 180px;         height: 236px;     }                                                                                               &amp;times;                     Modal">
+<meta name="description" content="var $iframe = $(&quot;#iframe&quot;);     var apis = [         &apos;https://cdn.yangju.vip/k/?url=&apos;,         &apos;https://jx.lache.me/cc/?url=&apos;,         &apos;https://api.653520.top/vip/?url=&apos;,         &apos;http">
 <meta property="og:type" content="website">
 <meta property="og:title" content="刘品金的个人博客">
-<meta property="og:url" content="http://yoursite.com/video.html">
+<meta property="og:url" content="http://yoursite.com/play.html">
 <meta property="og:site_name" content="刘品金的个人博客">
-<meta property="og:description" content=".videoimg{         width: 180px;         height: 236px;     }                                                                                               &amp;times;                     Modal">
+<meta property="og:description" content="var $iframe = $(&quot;#iframe&quot;);     var apis = [         &apos;https://cdn.yangju.vip/k/?url=&apos;,         &apos;https://jx.lache.me/cc/?url=&apos;,         &apos;https://api.653520.top/vip/?url=&apos;,         &apos;http">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-30T02:13:24.445Z">
+<meta property="og:updated_time" content="2018-09-30T02:15:01.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="刘品金的个人博客">
-<meta name="twitter:description" content=".videoimg{         width: 180px;         height: 236px;     }                                                                                               &amp;times;                     Modal">
+<meta name="twitter:description" content="var $iframe = $(&quot;#iframe&quot;);     var apis = [         &apos;https://cdn.yangju.vip/k/?url=&apos;,         &apos;https://jx.lache.me/cc/?url=&apos;,         &apos;https://api.653520.top/vip/?url=&apos;,         &apos;http">
 
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/video.html"/>
+  <link rel="canonical" href="http://yoursite.com/play.html"/>
 
 
 
@@ -307,36 +307,9 @@
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <style type="text/css">
-    .videoimg{
-        width: 180px;
-        height: 236px;
-    }
 </style>
-<body>
-    <!--<div class="row" id="list">-->
+<body onload="play()">
 
-    <!--</div>-->
-<!--<iframe  id="iframe" width="320" height="330" name="aa" frameborder="2" style="display:none;" src="">1111</iframe>-->
-    <div class="row hidden-sm" id="list">
-
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document" style="width: 800px;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" onclick="closemodal()" data-dismiss="modal">关闭</button>
-                </div>
-            </div>
-        </div>
-    </div>
 <script type="text/javascript"> 
     var $iframe = $("#iframe");
     var apis = [
@@ -348,43 +321,35 @@
         'https://jx.000180.top/jx/?url=',
         'https://jx.km58.top/jx/?url='
     ],apiIndex = 0;
-    $(document).ready(function(){
-        $.getJSON("/json/config/playerType.json", function (data){
-            if(data){
-                console.log(data[0]['jsonUrl'][0].split(":"));
-                $.getJSON("/json/"+data[0].jsonPath+"/"+data[0]['jsonUrl'][0].split(":")[1], function (data2){
-                    var html = "";
-                    data2.forEach(function(item,index){
-                        html += '<div class="col-xs-6 col-sm-4 col-md-3">' +
-                            '            <div class="thumbnail">' +
-                            '                <img class="videoimg" src="'+item.img+'" alt="'+item.title+'">' +
-                            '                <div class="caption">' +
-                            '                    <p title="'+item.title+'" style="width:130px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">'+item.title+'</p>' +
-                            '                    <p><button type="button" class="btn btn-primary btn-xs" style="padding:0 35px;" data-toggle="modal" data-target="#myModal" onclick="play(\''+item.title+'\',\''+item.href+'\')">播放</button></p>' +
-                            '                </div>' +
-                            '            </div>' +
-                            '        </div>';
-                    })
 
-                    $("#list").html(html);
-                });
+    function GetUrlParam(paraName) {
+        var url = document.location.toString();
+        var arrObj = url.split("?");
+        if (arrObj.length > 1) {
+            var arrPara = arrObj[1].split("&");
+            var arr;
+            for (var i = 0; i < arrPara.length; i++) {
+                arr = arrPara[i].split("=");
+                if (arr != null && arr[0] == paraName) {
+                    return arr[1];
+                }
             }
-        });
-    });
-
-    function play(title,url){
-        window.location.href = "/play.html?title="+title+"&videourl="+url;
-//        var path = apis[apiIndex]+url;
-//        var html = '<iframe id="iframe" width="100%" height="100%" name="aa" frameborder="2" src="'+path+'"></iframe>';
-//        $(".modal-body").html(html);
-//        $("#myModalLabel").html(title);
+            return "";
+        }
+        else {
+            return "";
+        }
     }
 
-    function closemodal(){
-        $(".modal-body").html('');
+    function play(){
+        var videoUrl  = GetUrlParam("videourl");
+        var path = apis[apiIndex]+videoUrl;
+        console.log("path",path);
+        var html = '<iframe id="iframe" width="100%" height="100%" name="aa" frameborder="2" src="'+path+'"></iframe>';
+        $("body").html(html);
+        $("title").html(GetUrlParam("title"));
     }
 </script>
-<![endif]-->
 </body>
 
     
