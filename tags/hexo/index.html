@@ -111,7 +111,7 @@
     algolia: {
       applicationID: 'A2UR5JKG1B',
       apiKey: '2e0ad21b79be7a2ccf2be09f02a0b163',
-      indexName: 'smachen',
+      indexName: 'liupinjin',
       hits: {"per_page":10},
       labels: {"input_placeholder":"输入搜索关键字","hits_empty":"没有找到与 ${query} 相关的文章","hits_stats":"${hits} 篇相关文章，共耗时 ${time} ms"}
     }
@@ -241,6 +241,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-more">
+          <a href="/video.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            视频解析
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
@@ -252,47 +262,9 @@
       
 
       
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  
-  <div class="algolia-popup popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
-
-
-    </div>
   
 </nav>
 
@@ -314,6 +286,34 @@
         <small>标签</small>
       </h2>
     </div>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2018/09/29/使用hexo-github搭建免费个人博客详细教程/" itemprop="url">
+              
+                <span itemprop="name">使用hexo+github搭建免费个人博客详细教程</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-09-29T16:01:44+08:00"
+              content="2018-09-29" >
+          09-29
+        </time>
+      </div>
+
+    </header>
+  </article>
+
 
     
       
@@ -377,7 +377,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLSly0zqweJ9UZyianQ6UXKhCdBe2KHxBfM68wCdsMNwVRgFtAur4pZ6l4ic75ljfKe2GjYVORxN7kQ/0"
+               src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIca2xkXfydYKusIzjLicr4CJQSdK1uTjhiaictxGmLqPCe92T2Wb5LHVr13pK3uE2VqDdZ9xXKVCP9A/132"
                alt="liupinjin" />
           <p class="site-author-name" itemprop="name">liupinjin</p>
           <p class="site-description motion-element" itemprop="description"></p>
@@ -394,11 +394,18 @@
           
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -412,7 +419,7 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/smachen" target="_blank" title="GitHub">
+                <a href="https://github.com/liupinjin" target="_blank" title="GitHub">
                   
                     <i class="fa fa-fw fa-github"></i>
                   
@@ -421,11 +428,11 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="smachen@126.com" target="_blank" title="E-Mail [ smachen@126.com ]">
+                <a href="1213034643@qq.com" target="_blank" title="E-Mail [ 1213034643@qq.com ]">
                   
                     <i class="fa fa-fw fa-envelope-square"></i>
                   
-                  E-Mail [ smachen@126.com ]
+                  E-Mail [ 1213034643@qq.com ]
                 </a>
               </span>
             
@@ -708,19 +715,6 @@
 
 
   
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
-
 
   
   <!-- color颜色：默认是（0，0，0），格式是（R,G,B）opacity 透明度：（0-1），默认0.5 count线段的数量：默认2， zIndexZ轴：默认-1 -->
